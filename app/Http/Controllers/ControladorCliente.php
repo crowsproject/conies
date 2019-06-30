@@ -7,7 +7,7 @@ use App\Http\Controllers\Controller;
 
 class ControladorCliente extends Controller
 {
-    public function index(
-	echo 'CONIES';
-	)
+    public function index(){
+    	echo 'conies';
+    }
 }
