@@ -13,7 +13,7 @@ class FormaPagos extends Migration
      */
     public function up()
     {
-        Schema::create('forma_pago', function (Blueprint $table) {
+        Schema::create('forma_pagos', function (Blueprint $table) {
             $table->increments('id_forma_pago');
             $table->string('forma_pago',50);
             $table->timestamps();
@@ -28,6 +28,6 @@ class FormaPagos extends Migration
      */
     public function down()
     {
-        Schema::drop('forma_pago');
+        Schema::drop('forma_pagos');
     }
 }
