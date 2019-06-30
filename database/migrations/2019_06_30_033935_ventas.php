@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateTipoHerramientasTable extends Migration
+class Ventas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,12 +13,12 @@ class CreateTipoHerramientasTable extends Migration
      */
     public function up()
     {
-        Schema::create('tipo_herramientas', function (Blueprint $table) {
-            $table->increments('id_th');
-            $table->string('tipo');
+         Schema::create('ventas', function (Blueprint $table) {
+            $table->increments('id_venta');
+            $table->date('fecha_venta');
+            $table->integer('id_cliente')->unsigned();
+            $table->foreign('id_cliente')->references('id_cliente')->on('clientes')->onDelete('cascade');
             $table->timestamps();
-            $table->softDeletes();
-
         });
     }
 
@@ -29,6 +29,6 @@ class CreateTipoHerramientasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('tipo_herramientas');
+         Schema::drop('ventas');
     }
 }

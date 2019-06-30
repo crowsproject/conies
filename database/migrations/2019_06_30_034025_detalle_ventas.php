@@ -4,7 +4,7 @@ use Illuminate\Support\Facades\Schema;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Database\Migrations\Migration;
 
-class CreateDetalleVentasTable extends Migration
+class DetalleVentas extends Migration
 {
     /**
      * Run the migrations.
@@ -13,13 +13,13 @@ class CreateDetalleVentasTable extends Migration
      */
     public function up()
     {
-        Schema::create('detalle_ventas', function (Blueprint $table) {
-            $table->bigIncrements('id_dv');
+         Schema::create('detalle_ventas', function (Blueprint $table) {
+            $table->bigIncrements('id_detalle_venta');
             $table->decimal('costo_total',8,2);
             $table->integer('id_venta')->unsigned();
-            $table->integer('id_h')->unsigned();
+            $table->integer('id_herramienta')->unsigned();
             $table->foreign('id_venta')->references('id_venta')->on('ventas')->onDelete('cascade');
-            $table->foreign('id_h')->references('id_h')->on('herramientas')->onDelete('cascade');
+            $table->foreign('id_herramienta')->references('id_herramienta')->on('herramientas')->onDelete('cascade');
             $table->timestamps();
         });
     }
@@ -31,6 +31,6 @@ class CreateDetalleVentasTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('detalle_ventas');
+        Schema::drop('detalle_ventas');
     }
 }
