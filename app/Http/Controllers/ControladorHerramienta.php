@@ -67,10 +67,13 @@ class ControladorHerramienta extends Controller
 			}
         
     }
-    public function reporteherramienta()
+    public function reporteherramientas()
 	{
-	$resultado=\DB::select("SELECT id_herramienta, nombre_herramienta, fecha_compra,
-	costo, especificaciones, serial, id_tipo_herramienta, id_marca, deleted_at FROM herramientas");
+	$resultado=\DB::select("SELECT h.id_herramienta, h.nombre_herramienta, h.fecha_compra, h.costo, h.especificaciones, h.serial,
+    t.tipo_herramienta, m.nombre_marca, h.deleted_at FROM herramientas AS h 
+				INNER JOIN tipo_herramientas AS t ON h.id_tipo_herramienta = t.id_tipo_herramienta
+				INNER JOIN marcas AS m ON h.id_marca = m.id_marca;");
+	
 	return view('conies.reporteHerramientas')
 	->with('herramientas',$resultado); 
 	}

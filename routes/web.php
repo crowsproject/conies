@@ -1,5 +1,8 @@
 <?php
 
+/*Route::get('/', function () {
+    return view('welcome');
+});*/
 Route::get('/altaherramienta','ControladorHerramienta@altaherramienta');
 Route::POST('/guardaherramienta','ControladorHerramienta@guardaherramienta')->name('guardaherramienta');
 Route::get('/reporteherramientas','ControladorHerramienta@reporteherramientas');
@@ -20,7 +23,7 @@ Route::get('/efisicacliente/{id_cliente}','ControladorCliente@efisicacliente')->
 
 Route::get('/altatipoherramienta','ControladorTipoHerramienta@altatipoherramienta');
 Route::POST('/guardatipoherramienta','ControladorTipoHerramienta@guardatipoherramienta')->name('guardatipoherramienta');
-Route::get('/reportetipoherramientas','ControladorTipoHerramienta@reportetipoherramientas');
+Route::get('/reportetipoherramienta','ControladorTipoHerramienta@reportetipoherramienta');
 Route::get('/modificatipoherramienta/{id_tipo_herramienta}','ControladorTipoHerramienta@modificatipoherramienta')->name('modificatipoherramienta');
 Route::POST('/guardamodificatipoherramienta','ControladorTipoHerramienta@guardamodificatipoherramienta')->name('guardamodificatipoherramienta');
 Route::get('/eliminatipoherramienta/{id_tipo_herramienta}','ControladorTipoHerramienta@eliminatipoherramienta')->name('eliminatipoherramienta');

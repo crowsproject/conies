@@ -51,7 +51,7 @@ class ControladorTipoHerramienta extends Controller
 	{
 		$resultado=\DB::select("SELECT id_tipo_herramienta, tipo_herramienta, deleted_at FROM tipo_herramientas");
 	  return view('conies.reporteTipoHerramienta')
-	  ->with('herramientas',$resultado); 
+	  ->with('tipo_herramientas',$resultado); 
 
 	}
 	public function modificatipoherramienta($id_tipo_herramienta)
