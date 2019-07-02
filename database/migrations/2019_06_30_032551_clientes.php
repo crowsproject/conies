@@ -21,7 +21,7 @@ class Clientes extends Migration
             $table->string('identificacion');
             $table->string('rfc',20);
             $table->string('razon_social',100);
-            $table->string('comprovante_domiciliario');
+            $table->string('comprobante_domiciliario');
             $table->timestamps();
             $table->softDeletes();            
         });
