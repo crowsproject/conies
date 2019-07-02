@@ -36,7 +36,7 @@ class ControladorHerramienta extends Controller
     }
     public function guardaherramienta(Request $request)
     {
-        $id_herramienta =  $request->id_herramenta;
+        $id_herramienta =  $request->id_herramienta;
         $nombre_herramienta = $request->nombre_herramienta;
         $fecha_compra = $request->fecha_compra;
 		$costo =  $request->costo;
@@ -70,30 +70,48 @@ class ControladorHerramienta extends Controller
     public function reporteherramientas()
 	{
 	$resultado=\DB::select("SELECT h.id_herramienta, h.nombre_herramienta, h.fecha_compra, h.costo, h.especificaciones, h.serial,
-    t.tipo_herramienta, m.nombre_marca, h.deleted_at FROM herramientas AS h 
+    t.tipo_herramienta AS tipoherramienta, m.nombre_marca AS marca, h.deleted_at FROM herramientas AS h 
 				INNER JOIN tipo_herramientas AS t ON h.id_tipo_herramienta = t.id_tipo_herramienta
 				INNER JOIN marcas AS m ON h.id_marca = m.id_marca;");
 	
 	return view('conies.reporteHerramientas')
 	->with('herramientas',$resultado); 
 	}
-	public function modificaherramienta($id_herramenta)
+	public function modificaherramienta($id_herramienta)
 	{
+		
+	  
 		$herramienta = herramientas::withTrashed()->where('id_herramienta','=',$id_herramienta)
-		                     ->get();
+		->get();
+		$id_tipo_herramienta = $herramienta[0]->id_tipo_herramienta;
+		$tipoherramienta = tipo_herramientas::where('id_tipo_herramienta','=',$id_tipo_herramienta)
+		->get();
+		$otrostipoherramientas = tipo_herramientas::where('id_tipo_herramienta','!=',$id_tipo_herramienta)
+		->get();
+		
+		$id_marca = $herramienta[0]->id_marca;
+		$marca = marcas::where('id_marca','=',$id_marca)
+		->get();
+		$otrasmarcas = marcas::where('id_marca','!=',$id_marca)
+		->get();
+
 		return view ('conies.modificaherramienta')
-		->with('herramienta',$herramienta[0]);
+		->with('herramienta',$herramienta[0])
+		->with('id_tipo_herramienta',$id_tipo_herramienta)
+	    ->with('tipoherramienta',$tipoherramienta[0]->tipo_herramienta)
+		->with('otrostipoherramientas',$otrostipoherramientas)
+		->with('id_marca',$id_marca)
+	    ->with('marca',$marca[0]->nombre_marca)
+		->with('otrasmarcas',$otrasmarcas);
 	}
     public function guardamodificaherramienta(Request $request)
 	{
-		$id_herramienta =  $request->id_herramenta;
+		$id_herramienta =  $request->id_herramienta;
         $nombre_herramienta = $request->nombre_herramienta;
         $fecha_compra = $request->fecha_compra;
 		$costo =  $request->costo;
         $especificaciones = $request->especificaciones;
         $serial = $request->serial;
-		$id_tipo_herramienta =  $request->id_tipo_herramienta;
-        $id_marca = $request->id_marca;
       
         /*
 		 $this->validate($request,[
@@ -102,9 +120,8 @@ class ControladorHerramienta extends Controller
 			'activo'=>'required'
 	     ]);*/
 		 
-	    $herra = herramientas::withTrashed()->find($id_herramenta);
-	    $herra = new herramientas;
-		$herra->id_herramenta =  $request->id_herramenta;
+	    $herra = herramientas::withTrashed()->find($id_herramienta);
+		$herra->id_herramienta =  $request->id_herramienta;
 		$herra->nombre_herramienta = $request->nombre_herramienta;
 		$herra->fecha_compra = $request->fecha_compra;
 		$herra->costo =  $request->costo;
@@ -120,26 +137,26 @@ class ControladorHerramienta extends Controller
 	  echo "Listo para modificar";
 	}
 	
-	public function eliminaherramienta($id_herramenta)
+	public function eliminaherramienta($id_herramienta)
 	{
-			if(herramientas::withTrashed()->find($id_herramenta)->delete()){
+			if(herramientas::withTrashed()->find($id_herramienta)->delete()){
 				return back()->with('msj','tipo de herramienta inhabilitada correctamente');
 			}else{
 				return back();
 			}
 	}
-	public function restauraherramienta($id_herramenta)
+	public function restauraherramienta($id_herramienta)
 	{
 
-	if(herramientas::withTrashed()->where('id_herramenta',$id_herramenta)->restore()){
+	if(herramientas::withTrashed()->where('id_herramienta',$id_herramienta)->restore()){
 		return back()->with('msj','tipo de herramienta restaurada correctamente');
 	}else{
 		return back();
 	}
 }
-     public function efisicaherramienta($id_herramenta)
+     public function efisicaherramienta($id_herramienta)
 	{
-		if(herramientas::withTrashed()->where('id_herramenta',$id_herramenta)->forceDelete()){
+		if(herramientas::withTrashed()->where('id_herramienta',$id_herramienta)->forceDelete()){
 			return back()->with('msj','tipo de herramienta eliminada permanentemente');
 		}else{
 			return back();

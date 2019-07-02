@@ -22,28 +22,24 @@
  <td>{{$her->costo}}</td>
   <td>{{$her->especificaciones}}</td>
  <td>{{$her->serial}}</td>
-  <td>{{$her->tipo_herramienta}}</td>
- <td>{{$her->nombre_marca}}</td>
+  <td>{{$her->tipoherramienta}}</td>
+ <td>{{$her->marca}}</td>
  <td>
  <div>
  @if($her->deleted_at=="")
-	 <button title="Editar">Editar
  <a href="{{URL::action('ControladorHerramienta@modificaherramienta',['id_herramienta'=>$her->id_herramienta])}}"> 
+ Editar
  </a>
- </button>
- <button title="Inhabiltar">Inhabiltar
  <a href="{{URL::action('ControladorHerramienta@eliminaherramienta',['id_herramienta'=>$her->id_herramienta])}}"> 
+ Inhabiltar
  </a> 
- </button>
  @else
-	 <button title="restaurar">Restaurar
  <a href="{{URL::action('ControladorHerramienta@restauraherramienta',['id_herramienta'=>$her->id_herramienta])}}"> 
+ Restaurar
  </a> 
- </button>
- <button title="Eliminar">Eliminar
  <a href="{{URL::action('ControladorHerramienta@efisicaherramienta',['id_herramienta'=>$her->id_herramienta])}}"> 
+ Eliminar
  </a> 
- </button>
  @endif
  </div>  
  </td>

@@ -35,23 +35,19 @@
  <td>
  <div>
  @if($cli->deleted_at=="")
-	 <button title="Editar">Editar
  <a href="{{URL::action('ControladorCliente@modificacliente',['id_cliente'=>$cli->id_cliente])}}"> 
+ Editar
  </a>
- </button>
- <button title="Inhabiltar">Inhabiltar
  <a href="{{URL::action('ControladorCliente@eliminacliente',['id_cliente'=>$cli->id_cliente])}}"> 
+ Inhabiltar
  </a> 
- </button>
  @else
-	 <button title="restaurar">Restaurar
  <a href="{{URL::action('ControladorCliente@restauracliente',['id_cliente'=>$cli->id_cliente])}}"> 
+ Restaurar
  </a> 
- </button>
- <button title="Eliminar">Eliminar
  <a href="{{URL::action('ControladorCliente@efisicacliente',['id_cliente'=>$cli->id_cliente])}}"> 
+ Eliminar
  </a> 
- </button>
  @endif
  </div>  
  </td>

@@ -15,23 +15,25 @@
  <td>
  <div>
  @if($tip->deleted_at=="")
-	 <button title="Editar">Editar
+	 
  <a href="{{URL::action('ControladorTipoHerramienta@modificatipoherramienta',['id_tipo_herramienta'=>$tip->id_tipo_herramienta])}}"> 
+ MODIFICAR
  </a>
- </button>
- <button title="Inhabiltar">Inhabiltar
+
  <a href="{{URL::action('ControladorTipoHerramienta@eliminatipoherramienta',['id_tipo_herramienta'=>$tip->id_tipo_herramienta])}}"> 
+ INHABILITAR
  </a> 
- </button>
+ 
  @else
-	 <button title="restaurar">Restaurar
+	 
  <a href="{{URL::action('ControladorTipoHerramienta@restauratipoherramienta',['id_tipo_herramienta'=>$tip->id_tipo_herramienta])}}"> 
+ RESTAURAR
  </a> 
- </button>
- <button title="Eliminar">Eliminar
+
  <a href="{{URL::action('ControladorTipoHerramienta@efisicatipoherramienta',['id_tipo_herramienta'=>$tip->id_tipo_herramienta])}}"> 
+ ELIMINAR
  </a> 
- </button>
+
  @endif
  </div>  
  </td>
