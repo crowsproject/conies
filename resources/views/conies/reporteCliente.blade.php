@@ -5,7 +5,7 @@
  <tr>
  <th>Clave cliente</th>
  <th>Nombre</th>
- <th>Apellido paterno</th>
+ <th>Apellido pateno</th>
  <th>Apellido materno</th>
  <th>Edad</th>
  <th>Dirección</th>
