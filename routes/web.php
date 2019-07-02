@@ -29,3 +29,36 @@ Route::POST('/guardamodificatipoherramienta','ControladorTipoHerramienta@guardam
 Route::get('/eliminatipoherramienta/{id_tipo_herramienta}','ControladorTipoHerramienta@eliminatipoherramienta')->name('eliminatipoherramienta');
 Route::get('/restauratipoherramienta/{id_tipo_herramienta}','ControladorTipoHerramienta@restauratipoherramienta')->name('restauratipoherramienta');
 Route::get('/efisicatipoherramienta/{id_tipo_herramienta}','ControladorTipoHerramienta@efisicatipoherramienta')->name('efisicatipoherramienta');
+
+//Codigo Alonso 02/07/2019
+
+//Conductores
+
+Route::get('/listaConductores','ControladorConductor@conductores')->name('listaConductores');
+Route::get('/altaConductor','ControladorConductor@altaConductor')->name('altaConductor');
+Route::post('/guardaConductor','ControladorConductor@guardaConductor')->name('guardaConductor');
+
+//Modificación Conductores
+Route::get('/modConductor/{id_conductor}','ControladorConductor@modConductor')->name('modConductor');
+Route::post('/guardaCambiosC','ControladorConductor@guardaCambiosC')->name('guardaCambiosC');
+
+//Eliminaciones Conductor
+
+Route::get('/suspenderConductor/{id_conductor}','ControladorConductor@suspenderConductor')->name('suspenderConductor');
+Route::get('/activarConductor/{id_conductor}','ControladorConductor@activarConductor')->name('activarConductor');
+Route::get('/eliminaCondutor/{id_conductor}','ControladorConductor@eliminaCondutor')->name('eliminaCondutor');
+
+//Marcas
+
+Route::get('/listaMarcas','ControladorMarca@marcas')->name('listaMarcas');
+Route::get('/altaMarca','ControladorMarca@altaMarca')->name('altaMarca');
+Route::post('/guardaMarca','ControladorMarca@guardaMarca')->name('guardaMarca');
+
+Route::get('/modMarca/{id_marca}','ControladorMarca@modMarca')->name('modMarca');
+Route::post('/guardaCambiosM','ControladorMarca@guardaCambiosM')->name('guardaCambiosM');
+
+//Eliminaciones Marca
+
+Route::get('/suspenderMarca/{id_marca}','ControladorMarca@suspenderMarca')->name('suspenderMarca');
+Route::get('/activarMarca/{id_marca}','ControladorMarca@activarMarca')->name('activarMarca');
+Route::get('/eliminarMarca/{id_marca}','ControladorMarca@eliminarMarca')->name('eliminarMarca');
