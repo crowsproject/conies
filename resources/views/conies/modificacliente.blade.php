@@ -51,11 +51,14 @@
 @endif
 <input type="text" name="email" value="{{$cliente->email}}">
 <br>
-<label>Identificación</label>
+<label >Identificacóon</label>
+<br>
 @if($errors->first('identificacion')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('identificacion') }} </i>
+	<i style="color:rgb(255,0,0);"> {{ $errors->first('identificacion') }} </i>
 @endif
-<input type="text" name="identificacion" value="{{$cliente->identificacion}}">
+<img src = "{{asset('storage/app/'.$cliente->identificacion)}}" height =100 width=100>
+<br>
+<input type='file' name ='identificacion'value="{{$cliente->identificacion}}">
 <br>
 <label>RFC</label>
 @if($errors->first('rfc')) 
@@ -69,11 +72,14 @@
 @endif
 <input type="text" name="razon_social" value="{{$cliente->razon_social}}">
 <br>
-<label>Comprobante domiciliario</label>
+<label >Comprobante domiciliario</label>
+<br>
 @if($errors->first('comprobante_domiciliario')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('comprobante_domiciliario') }} </i>
+	<i style="color:rgb(255,0,0);"> {{ $errors->first('comprobante_domiciliario') }} </i>
 @endif
-<input type="text" name="comprobante_domiciliario" value="{{$cliente->comprobante_domiciliario}}">
+<img src = "{{asset('storage/app/'.$cliente->comprobante_domiciliario)}}" height =100 width=100>
+<br>
+<input type='file' name ='comprobante_domiciliario'value="{{$cliente->comprobante_domiciliario}}">
 <br>
 <input type = 'submit' value = 'Guardar'>
 </form>

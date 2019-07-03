@@ -45,11 +45,13 @@ class ControladorHerramienta extends Controller
 		$id_tipo_herramienta =  $request->id_tipo_herramienta;
         $id_marca = $request->id_marca;
         
-		/* $this->validate($request,[
-	     'id_material'=>'required',
-         'nombre'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,ó,á,í,ú]+$/',
-         'activo'=>'required'
-	     ]);*/
+		$this->validate($request,[
+         'nombre_herramienta'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,ó,á,í,ú]+$/',
+         'fecha_compra'=>'required|date',
+		 'costo'=>'required',
+         'especificaciones'=>'required|regex:/^[A-Z,0-9][A-Z,a-z, ,ñ,é,ó,á,í,ú,1,2,3,4,5,6,7,8,9,0]+$/',
+         'serial'=>'required'
+	     ]);
 		 
             $herra = new herramientas;
 			$herra->id_herramienta =  $request->id_herramienta;
@@ -113,12 +115,13 @@ class ControladorHerramienta extends Controller
         $especificaciones = $request->especificaciones;
         $serial = $request->serial;
       
-        /*
-		 $this->validate($request,[
-			'id_material'=>'required',
-			'nombre'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,ó,á,í,ú]+$/',
-			'activo'=>'required'
-	     ]);*/
+        $this->validate($request,[
+         'nombre_herramienta'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,ó,á,í,ú]+$/',
+         'fecha_compra'=>'required|date',
+		 'costo'=>'required',
+         'especificaciones'=>'required|regex:/^[A-Z,0-9][A-Z,a-z, ,ñ,é,ó,á,í,ú,1,2,3,4,5,6,7,8,9,0]+$/',
+         'serial'=>'required'
+	     ]);
 		 
 	    $herra = herramientas::withTrashed()->find($id_herramienta);
 		$herra->id_herramienta =  $request->id_herramienta;

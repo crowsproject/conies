@@ -31,11 +31,10 @@ class ControladorTipoHerramienta extends Controller
         $id_tipo_herramienta =  $request->id_tipo_herramienta;
         $tipo_herramienta = $request->tipo_herramienta;
         
-		 /*$this->validate($request,[
-	     'id_material'=>'required',
-         'nombre'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,ó,á,í,ú]+$/',
-         'activo'=>'required'
-	     ]);*/
+		 $this->validate($request,[
+	     'id_tipo_herramienta'=>'required',
+         'tipo_herramienta'=>'required|regex:/^[A-Z][A-Z,a-z, ,ñ,é,ó,á,í,ú]+$/'
+	     ]);
 		 
             $tip = new tipo_herramientas;
 			$tip->id_tipo_herramienta = $request->id_tipo_herramienta;

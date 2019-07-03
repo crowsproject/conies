@@ -55,7 +55,7 @@
 @if($errors->first('identificacion')) 
 	<i style="color:rgb(255,0,0);" > {{ $errors->first('identificacion') }} </i>
 @endif
-<input type="text" name="identificacion" value="{{old('identificacion')}}">
+<input type="file" name="identificacion" value="{{old('identificacion')}}">
 <br>
 <label>RFC</label>
 @if($errors->first('rfc')) 
@@ -73,7 +73,7 @@
 @if($errors->first('comprobante_domiciliario')) 
 	<i style="color:rgb(255,0,0);" > {{ $errors->first('comprobante_domiciliario') }} </i>
 @endif
-<input type="text" name="comprobante_domiciliario" value="{{old('comprobante_domiciliario')}}">
+<input type="file" name="comprobante_domiciliario" value="{{old('comprobante_domiciliario')}}">
 <br>
 <input type = 'submit' value = 'Guardar'>
 </form>
