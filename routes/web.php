@@ -63,4 +63,4 @@ Route::get('/suspenderMarca/{id_marca}','ControladorMarca@suspenderMarca')->name
 Route::get('/activarMarca/{id_marca}','ControladorMarca@activarMarca')->name('activarMarca');
 Route::get('/eliminarMarca/{id_marca}','ControladorMarca@eliminarMarca')->name('eliminarMarca');
 
-Route::get('/machote','ControladorCliente@machote')->name('machote');
+Route::get('/principal','ControladorAdmin@inicio')->name('principal');

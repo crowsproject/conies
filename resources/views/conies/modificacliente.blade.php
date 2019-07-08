@@ -1,86 +1,121 @@
-@extends('conies.principal')
-@section('contenido')
-<h3 >Alta Cliente</h3>
+@extends('machote')
+@section('content')
+<br>
+<div class="card-title">
+	<h3 class="title-2">Midificación Conductor</h3>
+</div><br>
 <form action =  "{{route('guardamodificacliente')}}" method = "POST" enctype='multipart/form-data' >
 {{csrf_field()}}
 @if($errors->first('id_cliente'))
 	<i> {{ $errors->first('id_cliente') }} </i> 
 @endif
-<label>Clave cliente</label>
-<input type="text" name="id_cliente" value="{{$cliente->id_cliente}}" readonly ='readonly'>
-<br>
-<label>Nombre</label>
+<div class="form-group label-floating">
+	<label class="control-label">Clave cliente</label>
+	<input type="text" class="form-control" name="id_cliente" value="{{$cliente->id_cliente}}" readonly ='readonly'>
+</div>
 @if($errors->first('nombre_cliente')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('nombre_cliente') }} </i>
+	<div class="alert alert-warning">
+		<i> {{ $errors->first('nombre_cliente') }} </i>
+	</div>
 @endif
-<input type="text" name="nombre_cliente" value="{{$cliente->nombre_cliente}}">
-<br>
-<label>Apellido paterno</label>
+<div class="form-group label-floating">
+<label class="control-label">Nombre</label>
+<input type="text" class="form-control" name="nombre_cliente" value="{{$cliente->nombre_cliente}}">
+</div>
 @if($errors->first('apellido_paterno_cliente')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('apellido_paterno_cliente') }} </i>
+	<div class="alert alert-warning">
+		<i  > {{ $errors->first('apellido_paterno_cliente') }} </i>
+	</div>
 @endif
-<input type="text" name="apellido_paterno_cliente" value="{{$cliente->apellido_paterno_cliente}}">
-<br>
-<label>Apellido materno</label>
+<div class="form-group label-floating" >
+<label class="control-label">Apellido paterno</label>
+<input type="text" class="form-control" name="apellido_paterno_cliente" value="{{ $cliente->apellido_paterno_cliente }}">
+</div>
 @if($errors->first('apellido_materno_cliente')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('apellido_materno_cliente') }} </i>
+	<div class="alert alert-warning">
+		<i> {{ $errors->first('apellido_materno_cliente') }} </i>
+	</div>
 @endif
-<input type="text" name="apellido_materno_cliente" value="{{$cliente->apellido_materno_cliente}}">
-<br>
-<label>Edad</label>
+<div class="form-group label-floating">
+<label class="control-label">Apellido materno</label>
+<input type="text" class="form-control" name="apellido_materno_cliente" value="{{$cliente->apellido_materno_cliente}}">
+</div>
 @if($errors->first('edad')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('edad') }} </i>
+	<div class="alert alert-warning">
+		<i  > {{ $errors->first('edad') }} </i>
+	</div>
 @endif
-<input type="number" name="edad" value="{{$cliente->edad}}">
-<br>
-<label>Dirección</label>
+<div class="form-group label-floating">
+<label class="control-label">Edad</label>
+<input type="number" class="form-control" name="edad" value="{{$cliente->edad}}">
+</div>
 @if($errors->first('direccion')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('direccion') }} </i>
+	<div class="alert alert-warning">
+		<i  > {{ $errors->first('direccion') }} </i>
+	</div>
 @endif
-<input type="text" name="direccion" value="{{$cliente->direccion}}">
-<br>
-<label>Teléfono</label>
+<div class="form-group label-floating">
+<label class="control-label">Dirección</label>
+<input type="text" class="form-control" name="direccion" value="{{$cliente->direccion}}">
+</div>
 @if($errors->first('telefono')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('telefono') }} </i>
+	<div class="alert alert-warning">
+		<i  > {{ $errors->first('telefono') }} </i>
+	</div>
 @endif
-<input type="text" name="telefono" value="{{$cliente->telefono}}">
-<br>
-<label>E-mail</label>
+<div class="form-group label-floating">
+<label class="control-label">Teléfono</label>
+<input type="text" class="form-control" name="telefono" value="{{$cliente->telefono}}">
+</div>
 @if($errors->first('email')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('email') }} </i>
+	<div class="alert alert-warning">
+		<i  > {{ $errors->first('email') }} </i>
+	</div>
 @endif
-<input type="text" name="email" value="{{$cliente->email}}">
-<br>
-<label >Identificacóon</label>
-<br>
+<div class="form-group label-floating">
+<label class="control-label">E-mail</label>
+<input type="text" class="form-control" name="email" value="{{$cliente->email}}">
+</div>
 @if($errors->first('identificacion')) 
-	<i style="color:rgb(255,0,0);"> {{ $errors->first('identificacion') }} </i>
+	<div class="alert alert-warning">
+		<i  > {{ $errors->first('identificacion') }} </i>
+	</div>
 @endif
-<img src = "{{asset('storage/app/'.$cliente->identificacion)}}" height =100 width=100>
-<br>
-<input type='file' name ='identificacion'value="{{$cliente->identificacion}}">
-<br>
-<label>RFC</label>
+<div class="form-group label-floating">
+<label class="control-label">Identificación</label><br>
+<img src = "{{asset('/archivos/'.$cliente->identificacion)}}" height =100 width=300><br>
+<input type="file" name="identificacion" value="{{$cliente->identificacion}}">
+</div>
 @if($errors->first('rfc')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('rfc') }} </i>
+	<div class="alert alert-warning">
+		<i  > {{ $errors->first('rfc') }} </i>
+	</div>
 @endif
-<input type="text" name="rfc" value="{{$cliente->rfc}}">
-<br>
-<label>Razón social</label>
+<div class="form-group label-floating">
+<label class="control-label">RFC</label>
+<input type="text" class="form-control" name="rfc" value="{{$cliente->rfc}}">
+</div>
 @if($errors->first('razon_social')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('razon_social') }} </i>
+	<div class="alert alert-warning">
+		<i  > {{ $errors->first('razon_social') }} </i>
+	</div>
 @endif
-<input type="text" name="razon_social" value="{{$cliente->razon_social}}">
-<br>
-<label >Comprobante domiciliario</label>
-<br>
+<div class="form-group label-floating">
+<label class="control-label">Razón social</label>
+<input type="text" class="form-control" name="razon_social" value="{{$cliente->razon_social}}">
+</div>
 @if($errors->first('comprobante_domiciliario')) 
-	<i style="color:rgb(255,0,0);"> {{ $errors->first('comprobante_domiciliario') }} </i>
+	<div class="alert alert-warning">
+		<i  > {{ $errors->first('comprobante_domiciliario') }} </i>
+	</div>
 @endif
-<img src = "{{asset('storage/app/'.$cliente->comprobante_domiciliario)}}" height =100 width=100>
-<br>
-<input type='file' name ='comprobante_domiciliario'value="{{$cliente->comprobante_domiciliario}}">
-<br>
-<input type = 'submit' value = 'Guardar'>
-</form>
+<div class="form-group label-floating">
+<label class="control-label">Comprobante domiciliario</label><br>
+<img src = "{{asset('/archivos/'.$cliente->comprovante_domiciliario)}}" height =100 width=300><br>
+<input type="file" name="comprobante_domiciliario" value="{{$cliente->comprovante_domiciliario}}">
+</div>
+<p class="text-center">
+	<button class="btn btn-info btn-raised"><h4>Guardar</h4></button>
+</p>
+</form><br><br>
 @stop

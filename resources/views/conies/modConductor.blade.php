@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<title>Modificación Conductor</title>
-</head>
-<body>
-	<center><h3>Modificación Conductor</h3></center><br>
-	<div class="row">
-		<div class="container">
-			<form  action="{{route('guardaCambiosC')}}" method="POST" enctype='multipart/form-data' autocomplete="off">
+@extends('machote')
+@section('content')
+<br>
+<div class="card-title">
+	<h3 class="title-2">Midificación Conductor</h3>
+</div><br>
+<form  action="{{route('guardaCambiosC')}}" method="POST" enctype='multipart/form-data' autocomplete="off">
 				{{csrf_field()}}
 		        @if($errors->first('id_conductor')) 
 		        	<i> {{ $errors->first('id_conductor') }} </i> 
@@ -86,7 +81,7 @@
 		        @endif
 				<div class="form-group label-floating">
 					<label class="control-label">Identificación</label><br>
-					<img src = "{{asset('/archivos/'.$conductor->identificacion)}}"height =100 width=100><br>
+					<img src = "{{asset('/archivos/'.$conductor->identificacion)}}"height =100 width=300><br>
 					<input type="file" name="identificacion" value="{{$conductor->identificacion}}">
 				</div>
 				@if($errors->first('licencia_conduccion')) 
@@ -94,14 +89,11 @@
 		        @endif
 				<div class="form-group label-floating">
 					<label class="control-label">Licencia de Conducir</label><br>
-					<img src = "{{asset('/archivos/'.$conductor->licencia_conduccion)}}"height =100 width=100><br>
+					<img src = "{{asset('/archivos/'.$conductor->licencia_conduccion)}}"height =100 width=300><br>
 					<input type="file" name="licencia_conduccion" value="{{$conductor->licencia_conduccion}}">
 				</div>
 				<p class="text-center">
-					<button class="btn btn-info btn-raised">Guardar</button>
+					<button class="btn btn-info btn-raised"><h4>Guardar</h4></button>
 				</p>								
-			</form>
-		</div>
-	</div>
-</body>
-</html>
+			</form><br><br>
+@stop

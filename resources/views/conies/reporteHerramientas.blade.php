@@ -1,7 +1,12 @@
-@extends('conies.principal')
-@section('contenido')
-<table border="1">
- <thead>
+@extends('machote')
+@section('content')
+<br>
+<div class="card-title">
+	<h3 class="title-2">Reporte Herramientas</h3>
+</div><br>
+<div class="table-responsive">
+	<table class="table table-striped table-bordered table-condensed table-hover">
+		<thead>
  <tr>
  <th>Clave herramienta</th>
  <th>Nombre</th>
@@ -46,5 +51,6 @@
  </tr>
  @endforeach
  </tbody>
- </table>
+	</table>
+</div>	
  @stop
