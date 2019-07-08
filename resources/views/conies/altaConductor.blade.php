@@ -1,11 +1,9 @@
 @extends('machote')
 @section('content')
-<div class="container-fluid">
-	<div class="page-header">
-	  <h1 class="text-titles">Altas <small>Conductor</small></h1>
-	</div>
-</div>
-<br><br>
+<br>
+<div class="card-title">
+	<h3 class="title-2">Alta Conductor</h3>
+</div><br>
 <form action="{{route('guardaConductor')}}" method="POST" enctype='multipart/form-data' autocomplete="off">
 				{{csrf_field()}}
 		        @if($errors->first('id_conductor')) 
@@ -26,7 +24,7 @@
 		        	<i> {{ $errors->first('apellido_paterno_conductores') }} </i> 
 		        @endif
 		        <div class="form-group label-floating">
-					<label class="control-label">Appellido Paterno</label>
+					<label class="control-label">Apellido Paterno</label>
 					<input type="text" class="form-control" name="apellido_paterno_conductores" value="{{old('apellido_paterno_conductores')}}">
 				</div>
 		        @if($errors->first('apellido_materno_conductores')) 
@@ -95,5 +93,5 @@
 				<p class="text-center">
 					<button class="btn btn-info btn-raised"><h4>Guardar</h4></button>
 				</p>							
-			</form><br><br><br>
+			</form><br><br>
 @endsection	

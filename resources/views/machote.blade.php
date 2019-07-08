@@ -443,15 +443,24 @@
             <!-- HEADER DESKTOP-->
 
             <!-- MAIN CONTENT-->
-            <section class="full-box dashboard-contentPage">
-                <div class="main-content">
-                    <div class="section__content section__content--p30">
-                        <div class="container-fluid">
-                            @yield('content')
+            <div class="main-content">
+                <div class="section_content section__content--p30">
+                    <div class="container-fluid">
+                        <div class="row">
+                            <div class="col-md-12 offset-md-8 mr-auto ml-auto">
+                                <section class="card">
+                                    <div class="card-body text-secondary">
+                                    <div class="card-header"><center><h3>Renta Herramientas</h3></center></div>
+                                    <div class="card-body">
+                                        @yield('content')
+                                    </div>
+                                    </div>
+                                </section>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </section>
+            </div>
             <!-- END MAIN CONTENT-->
             <!-- END PAGE CONTAINER-->
         </div>
