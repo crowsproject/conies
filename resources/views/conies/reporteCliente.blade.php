@@ -33,10 +33,10 @@
 							<td>{{$cli->direccion}}</td>
 							<td>{{$cli->telefono}}</td>
 							<td>{{$cli->email}}</td>
-							<td>{{$cli->identificacion}}</td>
+						    <td><img src="{{asset('/archivos/'.$cli->identificacion)}}" height="150" width="150"></td>
 							<td>{{$cli->rfc}}</td>
 							<td>{{$cli->razon_social}}</td>
-							<td>{{$cli->comprobante_domiciliario}}</td>
+							<td><img src="{{asset('/archivos/'.$cli->comprovante_domiciliario)}}" alt=""></td>
 							<td>
 								<div>
 									@if($cli->deleted_at=="")
