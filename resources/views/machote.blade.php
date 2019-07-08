@@ -62,43 +62,47 @@
                     <ul class="navbar-mobile__list list-unstyled">
                         <li class="has-sub">
                             <a class="js-arrow" href="#">
-                                <i class="fas fa-tachometer-alt"></i>Catalogos</a>
+                                <i class="fas fa-copy"></i>Catalogos</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
                                 <li>
-                                    <a href="index.html">Dashboard 1</a>
+                                    <a href="{{URL::action('ControladorCliente@reporteclientes')}}">Clientes</a>
                                 </li>
                                 <li>
-                                    <a href="index2.html">Dashboard 2</a>
+                                    <a href="{{URL::action('ControladorConductor@conductores')}}">Conductores</a>
                                 </li>
                                 <li>
-                                    <a href="index3.html">Dashboard 3</a>
+                                    <a href="{{URL::action('ControladorMarca@marcas')}}">Marcas</a>
                                 </li>
                                 <li>
-                                    <a href="index4.html">Dashboard 4</a>
+                                    <a href="{{URL::action('ControladorTipoHerramienta@reportetipoherramienta')}}">Tipo Herramientas</a>
+                                </li>
+                                <li>
+                                    <a href="{{URL::action('ControladorHerramienta@reporteherramientas')}}">Herramientas</a>
                                 </li>
                             </ul>
                         </li>
                         <li>
-                            <a href="chart.html">
-                                <i class="fas fa-chart-bar"></i>Charts</a>
+                            <a class="js-arrow" href="#">
+                                <i class="far fa-check-square"></i>Formularios</a>
+                                <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
+                                    <li>
+                                        <a href="{{URL::action('ControladorCliente@altacliente')}}">Clientes</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{URL::action('ControladorConductor@altaConductor')}}">Conductores</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{URL::action('ControladorMarca@altaMarca')}}">Marcas</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{URL::action('ControladorTipoHerramienta@altatipoherramienta')}}">Tipo Herramientas</a>
+                                    </li>
+                                    <li>
+                                        <a href="{{URL::action('ControladorHerramienta@altaherramienta')}}">Herramientas</a>
+                                    </li>
+                                </ul>
                         </li>
-                        <li>
-                            <a href="table.html">
-                                <i class="fas fa-table"></i>Tables</a>
-                        </li>
-                        <li>
-                            <a href="form.html">
-                                <i class="far fa-check-square"></i>Forms</a>
-                        </li>
-                        <li>
-                            <a href="#">
-                                <i class="fas fa-calendar-alt"></i>Calendar</a>
-                        </li>
-                        <li>
-                            <a href="map.html">
-                                <i class="fas fa-map-marker-alt"></i>Maps</a>
-                        </li>
-                        <li class="has-sub">
+                        <!--<li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-copy"></i>Pages</a>
                             <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
@@ -112,46 +116,7 @@
                                     <a href="forget-pass.html">Forget Password</a>
                                 </li>
                             </ul>
-                        </li>
-                        <li class="has-sub">
-                            <a class="js-arrow" href="#">
-                                <i class="fas fa-desktop"></i>UI Elements</a>
-                            <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
-                                <li>
-                                    <a href="button.html">Button</a>
-                                </li>
-                                <li>
-                                    <a href="badge.html">Badges</a>
-                                </li>
-                                <li>
-                                    <a href="tab.html">Tabs</a>
-                                </li>
-                                <li>
-                                    <a href="card.html">Cards</a>
-                                </li>
-                                <li>
-                                    <a href="alert.html">Alerts</a>
-                                </li>
-                                <li>
-                                    <a href="progress-bar.html">Progress Bars</a>
-                                </li>
-                                <li>
-                                    <a href="modal.html">Modals</a>
-                                </li>
-                                <li>
-                                    <a href="switch.html">Switchs</a>
-                                </li>
-                                <li>
-                                    <a href="grid.html">Grids</a>
-                                </li>
-                                <li>
-                                    <a href="fontawesome.html">Fontawesome Icon</a>
-                                </li>
-                                <li>
-                                    <a href="typo.html">Typography</a>
-                                </li>
-                            </ul>
-                        </li>
+                        </li>-->
                     </ul>
                 </div>
             </nav>
@@ -209,7 +174,7 @@
                                         <a href="{{URL::action('ControladorHerramienta@altaherramienta')}}">Herramientas</a>
                                     </li>
                                 </ul>    
-                        </li>
+                        *</li>
                         <!-- Cerrar Session <li class="has-sub">
                             <a class="js-arrow" href="#">
                                 <i class="fas fa-copy"></i>Pages</a>
