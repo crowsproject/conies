@@ -220,4 +220,7 @@ class ControladorCliente extends Controller
 			return back();
 		}
 	}
+	public function machote(){
+		return view('machote');
+	}
 }
