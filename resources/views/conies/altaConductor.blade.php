@@ -1,15 +1,12 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<title>Alta Conductor</title>
-</head>
-<body>
-	<center><h3>Alta Conductor</h3></center><br>
-	<div class="row">
-		<div class="container">
-			<form action="{{route('guardaConductor')}}" method="POST" enctype='multipart/form-data' autocomplete="off">
+@extends('machote')
+@section('content')
+<div class="container-fluid">
+	<div class="page-header">
+	  <h1 class="text-titles">Altas <small>Conductor</small></h1>
+	</div>
+</div>
+<br><br>
+<form action="{{route('guardaConductor')}}" method="POST" enctype='multipart/form-data' autocomplete="off">
 				{{csrf_field()}}
 		        @if($errors->first('id_conductor')) 
 		        	<i> {{ $errors->first('id_conductor') }} </i> 
@@ -83,23 +80,20 @@
 				</div>
 				@if($errors->first('identificacion')) 
 		        	<i> {{ $errors->first('identificacion') }} </i> 
-		        @endif
+				@endif
 				<div class="form-group label-floating">
 					<label class="control-label">Identificación</label><br>
 					<input type="file" name="identificacion" value="{{old('identificacion')}}">
 				</div>
 				@if($errors->first('licencia_conduccion')) 
 		        	<i> {{ $errors->first('licencia_conduccion') }} </i> 
-		        @endif
+				@endif
 				<div class="form-group label-floating">
 					<label class="control-label">Licencia de Conducir</label><br>
 					<input type="file" name="licencia_conduccion" value="{{old('licencia_conduccion')}}">
 				</div>
 				<p class="text-center">
-					<button class="btn btn-info btn-raised">Guardar</button>
-				</p>								
-			</form>
-		</div>
-	</div>
-</body>
-</html>
+					<button class="btn btn-info btn-raised"><h4>Guardar</h4></button>
+				</p>							
+			</form><br><br><br>
+@endsection	
