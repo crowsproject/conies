@@ -14,25 +14,25 @@
 
 
     <!-- Fontfaces CSS-->
-    <link href="estilos/css/font-face.css" rel="stylesheet" media="all">
-    <link href="estilos/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
-    <link href="estilos/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
-    <link href="estilos/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
+    <link href="../estilos/css/font-face.css" rel="stylesheet" media="all">
+    <link href="../estilos/vendor/font-awesome-4.7/css/font-awesome.min.css" rel="stylesheet" media="all">
+    <link href="../estilos/vendor/font-awesome-5/css/fontawesome-all.min.css" rel="stylesheet" media="all">
+    <link href="../estilos/vendor/mdi-font/css/material-design-iconic-font.min.css" rel="stylesheet" media="all">
     <!-- Bootstrap CSS-->
-    <link href="estilos/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
+    <link href="../estilos/vendor/bootstrap-4.1/bootstrap.min.css" rel="stylesheet" media="all">
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
     <!-- Vendor CSS-->
-    <link href="estilos/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
-    <link href="estilos/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
-    <link href="estilos/vendor/wow/animate.css" rel="stylesheet" media="all">
-    <link href="estilos/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
-    <link href="estilos/vendor/slick/slick.css" rel="stylesheet" media="all">
-    <link href="estilos/vendor/select2/select2.min.css" rel="stylesheet" media="all">
-    <link href="estilos/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
+    <link href="../estilos/vendor/animsition/animsition.min.css" rel="stylesheet" media="all">
+    <link href="../estilos/vendor/bootstrap-progressbar/bootstrap-progressbar-3.3.4.min.css" rel="stylesheet" media="all">
+    <link href="../estilos/vendor/wow/animate.css" rel="stylesheet" media="all">
+    <link href="../estilos/vendor/css-hamburgers/hamburgers.min.css" rel="stylesheet" media="all">
+    <link href="../estilos/vendor/slick/slick.css" rel="stylesheet" media="all">
+    <link href="../estilos/vendor/select2/select2.min.css" rel="stylesheet" media="all">
+    <link href="../estilos/vendor/perfect-scrollbar/perfect-scrollbar.css" rel="stylesheet" media="all">
 
     <!-- Main CSS-->
-    <link href="estilos/css/theme.css" rel="stylesheet" media="all">
+    <link href="../estilos/css/theme.css" rel="stylesheet" media="all">
 </head>
 <body class="animsition">
 
@@ -44,7 +44,7 @@
                 <div class="container-fluid">
                     <div class="header-mobile-inner">
                         <a class="logo" href="inicio">
-                            <img src="estilos/pagina/logo.png" alt="CoolAdmin" />
+                            <img src="../estilos/pagina/logo.png" alt="CoolAdmin" />
                         </a>
                         <button class="hamburger hamburger--slider" type="button">
                             <span class="hamburger-box">
@@ -63,22 +63,22 @@
 								
 						<ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
 						<li>
-                           <a href="reporteclientes">Clientes </a>
+                           <a href="../reporteclientes">Clientes </a>
                         </li>
                     
                         <li>
-                           <a href="listaConductores">Conductores </a>
+                           <a href="../listaConductores">Conductores </a>
                         </li>
                         <li>
-                            <a href="listaMarcas">Marcas</a>
+                            <a href="../listaMarcas">Marcas</a>
                         </li>
                         
                         <li>
-                            <a href="reportetipoherramienta">Tipo de herramienta </a>
+                            <a href="../reportetipoherramienta">Tipo de herramienta </a>
                         </li>
                        
                          <li>
-                            <a href="reporteherramientas">Heramientas </a>
+                            <a href="../reporteherramientas">Heramientas </a>
                         </li>
 						</ul>
 								
@@ -88,22 +88,22 @@
                                 <i class="far fa-check-square"></i>Formularios</a>
                                 <ul class="navbar-mobile-sub__list list-unstyled js-sub-list">
 								 <li>
-                                    <a href="altacliente">Clientes </a>
+                                    <a href="../altacliente">Clientes </a>
                                 </li>
                                
                                 <li>
-                                    <a href="altaConductor">Conductores </a>
+                                    <a href="../altaConductor">Conductores </a>
                                 </li>
                                 <li>
-                                    <a href="altaMarca">Marcas</a>
-                                </li>
-                               
-                                <li>
-                                    <a href="altatipoherramienta">Tipos de herramienta</a>
+                                    <a href="../altaMarca">Marcas</a>
                                 </li>
                                
                                 <li>
-                                    <a href="altaherramienta">Herramientas </a>
+                                    <a href="../altatipoherramienta">Tipos de herramienta</a>
+                                </li>
+                               
+                                <li>
+                                    <a href="../altaherramienta">Herramientas </a>
                                 </li>
                                 </ul>
                         </li>
@@ -132,7 +132,7 @@
         <aside class="menu-sidebar d-none d-lg-block">
             <div class="logo" style="background-color: #f5d033;">
                 <a href="inicio">
-                    <img src="estilos/pagina/logo.png" alt="Cool Admin" />
+                    <img src="../estilos/pagina/logo.png" alt="Cool Admin" />
                 </a>
             </div>
             <div class="menu-sidebar__content js-scrollbar1" style="background-color: #969F9B;">
@@ -143,22 +143,22 @@
                                 <i class="fas fa-copy"></i>Catalogos</a>
                             <ul class="list-unstyled navbar__sub-list js-sub-list">
 						<li>
-                           <a href="reporteclientes">Clientes </a>
+                           <a href="../reporteclientes">Clientes </a>
                         </li>
                     
                         <li>
-                           <a href="listaConductores">Conductores </a>
+                           <a href="../listaConductores">Conductores </a>
                         </li>
                         <li>
-                            <a href="listaMarcas">Marcas</a>
+                            <a href="../listaMarcas">Marcas</a>
                         </li>
                         
                         <li>
-                            <a href="reportetipoherramienta">Tipo de herramienta </a>
+                            <a href="../reportetipoherramienta">Tipo de herramienta </a>
                         </li>
                        
                          <li>
-                            <a href="reporteherramientas">Heramientas </a>
+                            <a href="../reporteherramientas">Heramientas </a>
                         </li>
                             </ul>
                         </li>
@@ -167,22 +167,22 @@
                                 <i class="far fa-check-square"></i>Formularios</a>
                                 <ul class="list-unstyled navbar__sub-list js-sub-list">
                                   <li>
-                                    <a href="altacliente">Clientes </a>
+                                    <a href="../altacliente">Clientes </a>
                                 </li>
                                
                                 <li>
-                                    <a href="altaConductor">Conductores </a>
+                                    <a href="../altaConductor">Conductores </a>
                                 </li>
                                 <li>
-                                    <a href="altaMarca">Marcas</a>
-                                </li>
-                               
-                                <li>
-                                    <a href="altatipoherramienta">Tipos de herramienta</a>
+                                    <a href="../altaMarca">Marcas</a>
                                 </li>
                                
                                 <li>
-                                    <a href="altaherramienta">Herramientas </a>
+                                    <a href="../altatipoherramienta">Tipos de herramienta</a>
+                                </li>
+                               
+                                <li>
+                                    <a href="../altaherramienta">Herramientas </a>
                                 </li>
                                 </ul>    
                         </li>
@@ -336,7 +336,7 @@
                                 <div class="account-wrap">
                                     <div class="account-item clearfix js-item-menu">
                                         <div class="image">
-                                            <img src="estilos/pagina/avatar.jpg" alt="John Doe" />
+                                            <img src="../estilos/pagina/avatar.jpg" alt="John Doe" />
                                         </div>
                                         <div class="content">
                                             <a class="js-acc-btn" href="#">john doe</a>
@@ -345,7 +345,7 @@
                                             <div class="info clearfix">
                                                 <div class="image">
                                                     <a href="#">
-                                                        <img src="estilos/pagina/avatar.jpg" alt="John Doe" />
+                                                        <img src="../estilos/pagina/avatar.jpg" alt="John Doe" />
                                                     </a>
                                                 </div>
                                                 <div class="content">
@@ -411,29 +411,29 @@
 
      <!-- PIE DE PAGINA-->
   <!-- Jquery JS-->
-  <script src="estilos/vendor/jquery-3.2.1.min.js"></script>
+  <script src="../estilos/vendor/jquery-3.2.1.min.js"></script>
     <!-- Bootstrap JS-->
-    <script src="estilos/vendor/bootstrap-4.1/popper.min.js"></script>
-    <script src="estilos/vendor/bootstrap-4.1/bootstrap.min.js"></script>
+    <script src="../estilos/vendor/bootstrap-4.1/popper.min.js"></script>
+    <script src="../estilos/vendor/bootstrap-4.1/bootstrap.min.js"></script>
     <!-- Vendor JS       -->
-    <script src="estilos/vendor/slick/slick.min.js">
+    <script src="../estilos/vendor/slick/slick.min.js">
     </script>
 	<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
-    <script src="estilos/vendor/wow/wow.min.js"></script>
-    <script src="estilos/vendor/animsition/animsition.min.js"></script>
-    <script src="estilos/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
+    <script src="../estilos/vendor/wow/wow.min.js"></script>
+    <script src="../estilos/vendor/animsition/animsition.min.js"></script>
+    <script src="../estilos/vendor/bootstrap-progressbar/bootstrap-progressbar.min.js">
     </script>
-    <script src="estilos/vendor/counter-up/jquery.waypoints.min.js"></script>
-    <script src="estilos/vendor/counter-up/jquery.counterup.min.js">
+    <script src="../estilos/vendor/counter-up/jquery.waypoints.min.js"></script>
+    <script src="../estilos/vendor/counter-up/jquery.counterup.min.js">
     </script>
-    <script src="estilos/vendor/circle-progress/circle-progress.min.js"></script>
-    <script src="estilos/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
-    <script src="estilos/vendor/chartjs/Chart.bundle.min.js"></script>
-    <script src="estilos/vendor/select2/select2.min.js">
+    <script src="../estilos/vendor/circle-progress/circle-progress.min.js"></script>
+    <script src="../estilos/vendor/perfect-scrollbar/perfect-scrollbar.js"></script>
+    <script src="../estilos/vendor/chartjs/Chart.bundle.min.js"></script>
+    <script src="../estilos/vendor/select2/select2.min.js">
     </script>
 
     <!-- Main JS-->
-    <script src="estilos/js/main.js"></script>
+    <script src="../estilos/js/main.js"></script>
 
     <!-- END DE PIE DE PAGINA-->
 </body>

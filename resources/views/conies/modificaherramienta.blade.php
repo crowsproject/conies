@@ -1,4 +1,4 @@
-@extends('machote')
+@extends('machoteModificaciones')
 @section('content')
 <br>
 <div class="card-title">
