@@ -1,15 +1,10 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<title>Modificación Marca</title>
-</head>
-<body>
-	<center><h3>Modificación Marca</h3></center><br>
-	<div class="row">
-		<div class="container">
-			<form action="{{route('guardaCambiosM')}}" method="POST" enctype='multipart/form-data'>
+@extends('machoteModificaciones')
+@section('content')
+<br>
+<div class="card-title">
+	<h3 class="title-2">Midificación Marca</h3>
+</div><br>
+<form action="{{route('guardaCambiosM')}}" method="POST" enctype='multipart/form-data'>
 				{{csrf_field()}}
 				<div class="form-group label-floating">
 					<label class="control-label">Num. Registro</label>
@@ -25,8 +20,5 @@
 				<p class="text-center">
 					<button class="btn btn-info btn-raised">Guardar</button>
 				</p>
-			</form>
-		</div>
-	</div>
-</body>
-</html>
+</form>
+@stop

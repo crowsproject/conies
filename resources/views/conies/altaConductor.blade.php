@@ -1,105 +1,116 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<title>Alta Conductor</title>
-</head>
-<body>
-	<center><h3>Alta Conductor</h3></center><br>
-	<div class="row">
-		<div class="container">
-			<form action="{{route('guardaConductor')}}" method="POST" enctype='multipart/form-data' autocomplete="off">
+@extends('machote')
+@section('content')
+<br>
+<div class="card-title">
+	<h3 class="title-2">Alta Conductor</h3>
+</div><br>
+<form action="{{route('guardaConductor')}}" method="POST" enctype='multipart/form-data' autocomplete="off">
 				{{csrf_field()}}
-		        @if($errors->first('id_conductor')) 
-		        	<i> {{ $errors->first('id_conductor') }} </i> 
-		        @endif
 		        <div class="form-group label-floating">
 					<label class="control-label">Num. Registro</label>
 					<input type="text" class="form-control" name="id_conductor" value="{{$idcs}}" readonly>
 				</div>
-		        @if($errors->first('nombre_conductores')) 
-		        	<i> {{ $errors->first('nombre_conductores') }} </i> 
+		        @if($errors->first('nombre_conductores'))
+		        	<div class="alert alert-warning">
+		        		<i> {{ $errors->first('nombre_conductores') }} </i>
+		        	</div> 
 		        @endif
 		        <div class="form-group label-floating">
-					<label class="control-label">Nombre</label>
-					<input type="text" class="form-control" name="nombre_conductores" value="{{old('nombre_conductores')}}">
+					<label class="control-label">Nombre(s)</label>
+					<input type="text" class="form-control" name="nombre_conductores" value="{{old('nombre_conductores')}}" placeholder="Ingrese el nombre del conductor">
 				</div>
 		        @if($errors->first('apellido_paterno_conductores')) 
-		        	<i> {{ $errors->first('apellido_paterno_conductores') }} </i> 
+		        	<div class="alert alert-warning">
+		        		<i> {{ $errors->first('apellido_paterno_conductores') }} </i>
+		        	</div>
 		        @endif
 		        <div class="form-group label-floating">
-					<label class="control-label">Appellido Paterno</label>
-					<input type="text" class="form-control" name="apellido_paterno_conductores" value="{{old('apellido_paterno_conductores')}}">
+					<label class="control-label">Apellido Paterno</label>
+					<input type="text" class="form-control" name="apellido_paterno_conductores" value="{{old('apellido_paterno_conductores')}}" placeholder="Ingrese el apellido paterno del conductor">
 				</div>
 		        @if($errors->first('apellido_materno_conductores')) 
-		        	<i> {{ $errors->first('apellido_materno_conductores') }} </i> 
+		        	<div class="alert alert-warning">
+		        		<i> {{ $errors->first('apellido_materno_conductores') }} </i>
+		        	</div>
 		        @endif
 		        <div class="form-group label-floating">
 					<label class="control-label">Apellido Materno</label>
-					<input type="text" class="form-control" name="apellido_materno_conductores" value="{{old('apellido_materno_conductores')}}">
+					<input type="text" class="form-control" name="apellido_materno_conductores" value="{{old('apellido_materno_conductores')}}" placeholder="Ingrese el apellido materno del conductor">
 				</div>
 		        @if($errors->first('edad')) 
-		        	<i> {{ $errors->first('edad') }} </i> 
+		        	<div class="alert alert-warning">
+		        		<i> {{ $errors->first('edad') }} </i>
+		        	</div>
 		        @endif
 		        <div class="form-group label-floating">
 					<label class="control-label">Edad</label>
-					<input type="text" class="form-control" name="edad" value="{{old('edad')}}">
+					<input type="text" class="form-control" name="edad" value="{{old('edad')}}" placeholder="Ingrese la edad del conductor">
 				</div>
 		        @if($errors->first('direccion')) 
-		        	<i> {{ $errors->first('direccion') }} </i> 
+		        	<div class="alert alert-warning">
+		        		<i> {{ $errors->first('direccion') }} </i>
+		        	</div> 
 		        @endif
 		        <div class="form-group label-floating">
 					<label class="control-label">Dirección</label>
-					<input type="text" class="form-control" name="direccion" value="{{old('direccion')}}">
+					<input type="text" class="form-control" name="direccion" value="{{old('direccion')}}" placeholder="Ingrese la direeción del conductor">
 				</div>
 				@if($errors->first('telefono')) 
-		        	<i> {{ $errors->first('telefono') }} </i> 
+		        	<div class="alert alert-warning">
+		        		<i> {{ $errors->first('telefono') }} </i>
+		        	</div>
 		        @endif
 				<div class="form-group label-floating">
 					<label class="control-label">Teléfono</label>
-					<input type="text" class="form-control" name="telefono" value="{{old('telefono')}}">
+					<input type="text" class="form-control" name="telefono" value="{{old('telefono')}}" placeholder="Ingrese el teléfono del conductor"> 
 				</div>
 				@if($errors->first('email')) 
-		        	<i> {{ $errors->first('email') }} </i> 
+		        	<div class="alert alert-warning">
+		        		<i> {{ $errors->first('email') }} </i>
+		        	</div>
 		        @endif
 				<div class="form-group label-floating">
 					<label class="control-label">E-mail</label>
-					<input type="mail" class="form-control" name="email" value="{{old('email')}}">
+					<input type="mail" class="form-control" name="email" value="{{old('email')}}" placeholder="Ingrese el correo electonico del conductor">
 				</div>
 				@if($errors->first('rfc')) 
-		        	<i> {{ $errors->first('rfc') }} </i> 
+		        	<div class="alert alert-warning">
+		        		<i> {{ $errors->first('rfc') }} </i>
+		        	</div>
 		        @endif
 				<div class="form-group label-floating">
 					<label class="control-label">RFC</label>
-					<input class="form-control" type="text" name="rfc" value="{{old('rfc')}}">
+					<input class="form-control" type="text" name="rfc" value="{{old('rfc')}}" placeholder="Ingrese el RFC del conductor">
 				</div>
 				@if($errors->first('razon_social')) 
-		        	<i> {{ $errors->first('razon_social') }} </i> 
+		        	<div class="alert alert-warning">
+		        		<i> {{ $errors->first('razon_social') }} </i>
+		        	</div>
 		        @endif
 				<div class="form-group label-floating">
 					<label class="control-label">Razón Social</label>
-					<input class="form-control" type="text" name="razon_social" value="{{old('razon_social')}}">
+					<input class="form-control" type="text" name="razon_social" value="{{old('razon_social')}}" placeholder="Ingrese la Razón Social del conductor">
 				</div>
 				@if($errors->first('identificacion')) 
-		        	<i> {{ $errors->first('identificacion') }} </i> 
-		        @endif
+		        	<div class="alert alert-warning">
+		        		<i> {{ $errors->first('identificacion') }} </i>
+		        	</div> 
+				@endif
 				<div class="form-group label-floating">
 					<label class="control-label">Identificación</label><br>
 					<input type="file" name="identificacion" value="{{old('identificacion')}}">
 				</div>
 				@if($errors->first('licencia_conduccion')) 
-		        	<i> {{ $errors->first('licencia_conduccion') }} </i> 
-		        @endif
+		        	<div class="alert alert-warning">
+		        		<i> {{ $errors->first('licencia_conduccion') }} </i>
+		        	</div>
+				@endif
 				<div class="form-group label-floating">
 					<label class="control-label">Licencia de Conducir</label><br>
 					<input type="file" name="licencia_conduccion" value="{{old('licencia_conduccion')}}">
 				</div>
 				<p class="text-center">
-					<button class="btn btn-info btn-raised">Guardar</button>
-				</p>								
-			</form>
-		</div>
-	</div>
-</body>
-</html>
+					<button class="btn btn-info btn-raised"><h4>Guardar</h4></button>
+				</p>							
+			</form><br><br>
+@endsection	

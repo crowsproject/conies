@@ -1,4 +1,4 @@
-@extends('conies.principal')
+@extends('machoteModificaciones')
 @section('contenido')
 <h3 >Modifica Tipo Herramienta</h3>
 <form action =  "{{route('guardamodificatipoherramienta')}}" method = "POST" enctype='multipart/form-data' >

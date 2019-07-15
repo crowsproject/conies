@@ -1,80 +1,119 @@
-@extends('conies.principal')
-@section('contenido')
-<h3 >Alta Cliente</h3>
+@extends('machote')
+@section('content')
+<br>
+<div class="card-title">
+	<h3 class="title-2">Alta Cliente</h3>
+</div><br>
 <form action =  "{{route('guardacliente')}}" method = "POST" enctype='multipart/form-data' >
 {{csrf_field()}}
 @if($errors->first('id_cliente'))
 	<i> {{ $errors->first('id_cliente') }} </i> 
 @endif
-<label>Clave cliente</label>
-<input type="text" name="id_cliente" value="{{$idClientes}}" readonly ='readonly'>
-<br>
-<label>Nombre</label>
+<div class="form-group label-floating">
+	<label class="control-label">Clave cliente</label>
+	<input type="text" class="form-control" name="id_cliente" value="{{$idClientes}}" readonly ='readonly'>
+</div>
 @if($errors->first('nombre_cliente')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('nombre_cliente') }} </i>
+	<div class="alert alert-warning">
+		<i> {{ $errors->first('nombre_cliente') }} </i>
+	</div>
 @endif
-<input type="text" name="nombre_cliente" value="{{old('nombre_cliente')}}">
-<br>
-<label>Apellido paterno</label>
+<div class="form-group label-floating">
+<label class="control-label">Nombre</label>
+<input type="text" class="form-control" name="nombre_cliente" value="{{old('nombre_cliente')}}">
+</div>
 @if($errors->first('apellido_paterno_cliente')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('apellido_paterno_cliente') }} </i>
+	<div class="alert alert-warning">
+		<i  > {{ $errors->first('apellido_paterno_cliente') }} </i>
+	</div>
 @endif
-<input type="text" name="apellido_paterno_cliente" value="{{old('apellido_paterno_cliente')}}">
-<br>
-<label>Apellido materno</label>
+<div class="form-group label-floating" >
+<label class="control-label">Apellido paterno</label>
+<input type="text" class="form-control" name="apellido_paterno_cliente" value="{{old('apellido_paterno_cliente')}}">
+</div>
 @if($errors->first('apellido_materno_cliente')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('apellido_materno_cliente') }} </i>
+	<div class="alert alert-warning">
+		<i> {{ $errors->first('apellido_materno_cliente') }} </i>
+	</div>
 @endif
-<input type="text" name="apellido_materno_cliente" value="{{old('apellido_materno_cliente')}}">
-<br>
-<label>Edad</label>
+<div class="form-group label-floating">
+<label class="control-label">Apellido materno</label>
+<input type="text" class="form-control" name="apellido_materno_cliente" value="{{old('apellido_materno_cliente')}}">
+</div>
 @if($errors->first('edad')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('edad') }} </i>
+	<div class="alert alert-warning">
+		<i  > {{ $errors->first('edad') }} </i>
+	</div>
 @endif
-<input type="number" name="edad" value="{{old('edad')}}">
-<br>
-<label>Dirección</label>
+<div class="form-group label-floating">
+<label class="control-label">Edad</label>
+<input type="number" class="form-control" name="edad" value="{{old('edad')}}">
+</div>
 @if($errors->first('direccion')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('direccion') }} </i>
+	<div class="alert alert-warning">
+		<i  > {{ $errors->first('direccion') }} </i>
+	</div>
 @endif
-<input type="text" name="direccion" value="{{old('direccion')}}">
-<br>
-<label>Teléfono</label>
+<div class="form-group label-floating">
+<label class="control-label">Dirección</label>
+<input type="text" class="form-control" name="direccion" value="{{old('direccion')}}">
+</div>
 @if($errors->first('telefono')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('telefono') }} </i>
+	<div class="alert alert-warning">
+		<i  > {{ $errors->first('telefono') }} </i>
+	</div>
 @endif
-<input type="text" name="telefono" value="{{old('telefono')}}">
-<br>
-<label>E-mail</label>
+<div class="form-group label-floating">
+<label class="control-label">Teléfono</label>
+<input type="text" class="form-control" name="telefono" value="{{old('telefono')}}">
+</div>
 @if($errors->first('email')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('email') }} </i>
+	<div class="alert alert-warning">
+		<i  > {{ $errors->first('email') }} </i>
+	</div>
 @endif
-<input type="text" name="email" value="{{old('email')}}">
-<br>
-<label>Identificación</label>
+<div class="form-group label-floating">
+<label class="control-label">E-mail</label>
+<input type="text" class="form-control" name="email" value="{{old('email')}}">
+</div>
 @if($errors->first('identificacion')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('identificacion') }} </i>
+	<div class="alert alert-warning">
+		<i  > {{ $errors->first('identificacion') }} </i>
+	</div>
 @endif
+<div class="form-group label-floating">
+<label class="control-label">Identificación</label>
 <input type="file" name="identificacion" value="{{old('identificacion')}}">
-<br>
-<label>RFC</label>
+</div>
 @if($errors->first('rfc')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('rfc') }} </i>
+	<div class="alert alert-warning">
+		<i  > {{ $errors->first('rfc') }} </i>
+	</div>
 @endif
-<input type="text" name="rfc" value="{{old('rfc')}}">
-<br>
-<label>Razón social</label>
+<div class="form-group label-floating">
+<label class="control-label">RFC</label>
+<input type="text" class="form-control" name="rfc" value="{{old('rfc')}}">
+</div>
 @if($errors->first('razon_social')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('razon_social') }} </i>
+	<div class="alert alert-warning">
+		<i  > {{ $errors->first('razon_social') }} </i>
+	</div>
 @endif
-<input type="text" name="razon_social" value="{{old('razon_social')}}">
-<br>
-<label>Comprobante domiciliario</label>
+<div class="form-group label-floating">
+<label class="control-label">Razón social</label>
+<input type="text" class="form-control" name="razon_social" value="{{old('razon_social')}}">
+</div>
 @if($errors->first('comprobante_domiciliario')) 
-	<i style="color:rgb(255,0,0);" > {{ $errors->first('comprobante_domiciliario') }} </i>
+	<div class="alert alert-warning">
+		<i  > {{ $errors->first('comprobante_domiciliario') }} </i>
+	</div>
 @endif
+<div class="form-group label-floating">
+<label class="control-label">Comprobante domiciliario</label>
 <input type="file" name="comprobante_domiciliario" value="{{old('comprobante_domiciliario')}}">
-<br>
-<input type = 'submit' value = 'Guardar'>
-</form>
+</div>
+<p class="text-center">
+	<button class="btn btn-info btn-raised"><h4>Guardar</h4></button>
+</p>
+</form><br><br>
 @stop

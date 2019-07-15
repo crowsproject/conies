@@ -1,13 +1,9 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-	<meta charset="UTF-8">
-	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-	<title>Lista Conductores</title>
-</head>
-<body>
-	<center><h3>Lista de Conductores</h3></center>
-	<div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+@extends('machote')
+@section('content')
+<br>
+<div class="card-title">
+	<h3 class="title-2">Reporte Conductores</h3>
+</div><br>
 			<div class="table-responsive">
 				<table class="table table-striped table-bordered table-condensed table-hover">
 					<thead>
@@ -46,6 +42,4 @@
 					@endforeach
 				</table>
 			</div>
-	</div>
-</body>
-</html>
+@stop

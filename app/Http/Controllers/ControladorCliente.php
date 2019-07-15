@@ -93,7 +93,7 @@ class ControladorCliente extends Controller
             $cliente ->rfc=$request->rfc;
             $cliente ->razon_social=$request->razon_social;
 			$cliente ->identificacion=$lice4;
-            $cliente ->comprobante_domiciliario=$lice2;
+            $cliente ->comprovante_domiciliario=$lice2;
             if($cliente->save()){
 				return back()->with('msj','Cliente guardado correctamente');
 			}else{
