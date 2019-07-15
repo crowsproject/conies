@@ -20,6 +20,7 @@ class Herramientas extends Migration
             $table->decimal('costo',8,2);
             $table->string('especificaciones');
             $table->string('serial',50);
+            $table->string('imagen',100);
             $table->integer('id_tipo_herramienta')->unsigned();
             $table->integer('id_marca')->unsigned();
             $table->foreign('id_tipo_herramienta')->references('id_tipo_herramienta')->on('tipo_herramientas')->onDelete('cascade');

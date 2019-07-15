@@ -41,7 +41,8 @@ class ControladorHerramienta extends Controller
         $fecha_compra = $request->fecha_compra;
 		$costo =  $request->costo;
         $especificaciones = $request->especificaciones;
-        $serial = $request->serial;
+		$serial = $request->serial;
+		$imagen = $request->imagen;
 		$id_tipo_herramienta =  $request->id_tipo_herramienta;
         $id_marca = $request->id_marca;
         
@@ -50,8 +51,17 @@ class ControladorHerramienta extends Controller
          'fecha_compra'=>'required|date',
 		 'costo'=>'required',
          'especificaciones'=>'required|regex:/^[A-Z,0-9][A-Z,a-z, ,ñ,é,ó,á,í,ú,1,2,3,4,5,6,7,8,9,0]+$/',
-         'serial'=>'required'
-	     ]);
+		 'serial'=>'required',
+		 'imagen'=>'required|image|mimes:gif,jpeg,png'
+		 
+		 ]);
+		 $foto = $request->file('imagen');
+		 $ldate = date('Ymd_His_');
+
+		 $img = $foto->getClientOriginalName();
+		 $foto2 = $ldate.$img;
+		 \Storage::disk('local')->put($foto2, \File::get($foto));
+		 
 		 
             $herra = new herramientas;
 			$herra->id_herramienta =  $request->id_herramienta;
@@ -60,6 +70,7 @@ class ControladorHerramienta extends Controller
 			$herra->costo =  $request->costo;
 			$herra->especificaciones = $request->especificaciones;
 			$herra->serial = $request->serial;
+			$herra->imagen = $foto2;
 			$herra->id_tipo_herramienta =  $request->id_tipo_herramienta;
 			$herra->id_marca = $request->id_marca;
 		    if($herra->save()){
@@ -71,7 +82,7 @@ class ControladorHerramienta extends Controller
     }
     public function reporteherramientas()
 	{
-	$resultado=\DB::select("SELECT h.id_herramienta, h.nombre_herramienta, h.fecha_compra, h.costo, h.especificaciones, h.serial,
+	$resultado=\DB::select("SELECT h.id_herramienta, h.nombre_herramienta,h.imagen as imagen, h.fecha_compra, h.costo, h.especificaciones, h.serial,
     t.tipo_herramienta AS tipoherramienta, m.nombre_marca AS marca, h.deleted_at FROM herramientas AS h 
 				INNER JOIN tipo_herramientas AS t ON h.id_tipo_herramienta = t.id_tipo_herramienta
 				INNER JOIN marcas AS m ON h.id_marca = m.id_marca;");
@@ -121,8 +132,19 @@ class ControladorHerramienta extends Controller
 		 'costo'=>'required',
          'especificaciones'=>'required|regex:/^[A-Z,0-9][A-Z,a-z, ,ñ,é,ó,á,í,ú,1,2,3,4,5,6,7,8,9,0]+$/',
          'serial'=>'required'
-	     ]);
-		 
+		 ]);
+		 $her = herramientas::withTrashed()->where('id_herramienta',$request->id_herramienta)->get();
+		 $foto = $request->file('imagen');
+		 $ldate = date('Ymd_His_');
+
+		 if ($foto!="") {
+			\Storage::delete($her[0]->imagen);
+			$img = $foto->getClientOriginalName();
+			$foto2 = $ldate.$img;
+			\Storage::disk('local')->put($foto2, \File::get($foto));
+		 }
+
+
 	    $herra = herramientas::withTrashed()->find($id_herramienta);
 		$herra->id_herramienta =  $request->id_herramienta;
 		$herra->nombre_herramienta = $request->nombre_herramienta;
@@ -130,6 +152,9 @@ class ControladorHerramienta extends Controller
 		$herra->costo =  $request->costo;
 		$herra->especificaciones = $request->especificaciones;
 		$herra->serial = $request->serial;
+		if ($foto!="") {
+			$herra->imagen = $foto2;
+		}
 		$herra->id_tipo_herramienta =  $request->id_tipo_herramienta;
 		$herra->id_marca = $request->id_marca;
 			if($herra->save()){

@@ -65,6 +65,16 @@
 <input type="text" class="form-control" name="serial" value="{{old('serial')}}">
 </div>
 
+@if($errors->first('imagen')) 
+	<div class="alert alert-warning">
+		<i> {{ $errors->first('imagen') }} </i>
+	</div>
+@endif
+<div class="form-group label-floating">
+<label class="control-label">Imagen</label><br>
+<input type="file" name="imagen" value="{{old('imagen')}}">
+</div>
+
 <div class="form-group label-floating">
 <label class="control-label">Tipo Herramienta</label>
 <select name = 'id_tipo_herramienta'>

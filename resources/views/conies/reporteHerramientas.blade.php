@@ -16,6 +16,8 @@
  <th>Serial</th>
  <th>Tipo de herramienta</th>
  <th>Marca</th>
+ <th>Imagen</th>
+ <th>Opciones</th>
  </tr>
  </thead>
  <tbody>
@@ -29,6 +31,7 @@
  <td>{{$her->serial}}</td>
   <td>{{$her->tipoherramienta}}</td>
  <td>{{$her->marca}}</td>
+ <td width="100"><center><img width=100 height="130" src = "{{asset('/archivos/'.$her->imagen)}}"></center></td>
  <td>
  <div>
  @if($her->deleted_at=="")
