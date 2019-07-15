@@ -10,7 +10,7 @@ class herramientas extends Model
     use SoftDeletes;
     protected $primaryKey = 'id_herramienta';  
     protected $fillable=['id_herramienta','nombre_herramienta','fecha_compra','costo',
-	'especificaciones','serial','id_tipo_herramienta','id_marca'];
+	'especificaciones','serial','imagen','id_tipo_herramienta','id_marca'];
     protected $date=['deleted_at'];
     
 }
