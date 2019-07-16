@@ -1,8 +1,9 @@
 <?php
 
-/*Route::get('/', function () {
-    return view('welcome');
-});*/
+Route::get('/','frontend@productos'); //Ruta de inicio
+
+
+
 Route::get('/altaherramienta','ControladorHerramienta@altaherramienta');
 Route::POST('/guardaherramienta','ControladorHerramienta@guardaherramienta')->name('guardaherramienta');
 Route::get('/reporteherramientas','ControladorHerramienta@reporteherramientas');
