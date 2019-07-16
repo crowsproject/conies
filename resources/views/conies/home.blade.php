@@ -375,7 +375,7 @@ $(document).ready(function() {
 	@foreach($produ as $p)
 		<div class="col-md-2">
 			<figure class="card card-product">
-				<div class="img-wrap"> <img src="{{$p->imagen}}"></div>
+				<div class="img-wrap"> <img src="{{asset('/archivos/'.$p->imagen)}}"></div>
 				<figcaption class="info-wrap">
 					<h6 class="title ">{{$p->nombre_herramienta}}</h6>
 					
