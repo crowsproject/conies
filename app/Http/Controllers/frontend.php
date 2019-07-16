@@ -20,8 +20,25 @@ class frontend extends Controller
                                     FROM herramientas AS h 
                                     INNER JOIN tipo_herramientas AS t ON t.id_tipo_herramienta =  h.id_tipo_herramienta ORDER BY h.id_herramienta DESC LIMIT 6");
         
+            
+            $jardin = herramientas::where('id_tipo_herramienta','=','5')
+                                    ->orderBy('id_herramienta','asc', 'limit 6')
+                                    ->get();
+            
+            $hogar = herramientas::where('id_tipo_herramienta','=','2')
+                                    ->orderBy('id_herramienta','asc','limit 6')
+                                    ->get();
+        
+            $plomeria = herramientas::where('id_tipo_herramienta','=','4')
+                                    ->orderBy('id_herramienta','asc','limit 6')
+                                    ->get();
+        
+        
             return view ('conies/home')
-                    ->with('produ',$produ);
+                    ->with('produ',$produ)
+                    ->with('jardin',$jardin)
+                    ->with('hogar',$hogar)
+                    ->with('plomeria',$plomeria);
     }
 
 

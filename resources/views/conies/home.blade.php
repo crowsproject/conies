@@ -413,21 +413,18 @@ $(document).ready(function() {
 </header>
 
 <div class="row-sm">
-	@foreach($produ as $p)
+	@foreach($jardin as $j)
 		<div class="col-md-2">
 			<figure class="card card-product">
 				<div class="img-wrap"> <img src="images/items/item-sm.png"></div>
 				<figcaption class="info-wrap">
-					<h6 class="title ">{{$p->nombre_herramienta}}</h6>
+					<h6 class="title ">{{$j->nombre_herramienta}}</h6>
 					
 					<div class="price-wrap">
-						<span class="price-new">${{$p->costo}}</span>
+						<span class="price-new">${{$j->costo}}</span>
 						<br>
 						<a href="#"><span>M&aacute;s Informaci&oacute;n</span></a>
 						<br>
-						<span>Categor&iacute;a</span>
-						<br>
-						<a href="#"><span>{{$p->tip}}</span></a>
 					</div> <!-- price-wrap.// -->
 					
 				</figcaption>
@@ -450,25 +447,22 @@ $(document).ready(function() {
 <section class="section-request bg padding-y-sm">
 <div class="container">
 <header class="section-heading heading-line">
-	<h4 class="title-section bg text-uppercase">Productos Nuevos</h4>
+	<h4 class="title-section bg text-uppercase">Herramientas del Hogar</h4>
 </header>
 
 <div class="row-sm">
-	@foreach($produ as $p)
+	@foreach($hogar as $h)
 		<div class="col-md-2">
 			<figure class="card card-product">
 				<div class="img-wrap"> <img src="images/items/item-sm.png"></div>
 				<figcaption class="info-wrap">
-					<h6 class="title ">{{$p->nombre_herramienta}}</h6>
+					<h6 class="title ">{{$h->nombre_herramienta}}</h6>
 					
 					<div class="price-wrap">
-						<span class="price-new">${{$p->costo}}</span>
+						<span class="price-new">${{$h->costo}}</span>
 						<br>
 						<a href="#"><span>M&aacute;s Informaci&oacute;n</span></a>
 						<br>
-						<span>Categor&iacute;a</span>
-						<br>
-						<a href="#"><span>{{$p->tip}}</span></a>
 					</div> <!-- price-wrap.// -->
 					
 				</figcaption>
@@ -492,25 +486,22 @@ $(document).ready(function() {
 <section class="section-request bg padding-y-sm">
 <div class="container">
 <header class="section-heading heading-line">
-	<h4 class="title-section bg text-uppercase">Productos Nuevos</h4>
+	<h4 class="title-section bg text-uppercase">Herramientas de Plomer&iacute;a</h4>
 </header>
 
 <div class="row-sm">
-	@foreach($produ as $p)
+	@foreach($plomeria as $plo)
 		<div class="col-md-2">
 			<figure class="card card-product">
-				<div class="img-wrap"> <img src="{{$p->imagen}}"></div>
+				<div class="img-wrap"> <img src="images/items/item-sm.png"></div>
 				<figcaption class="info-wrap">
-					<h6 class="title ">{{$p->nombre_herramienta}}</h6>
+					<h6 class="title ">{{$plo->nombre_herramienta}}</h6>
 					
 					<div class="price-wrap">
-						<span class="price-new">${{$p->costo}}</span>
+						<span class="price-new">${{$plo->costo}}</span>
 						<br>
 						<a href="#"><span>M&aacute;s Informaci&oacute;n</span></a>
 						<br>
-						<span>Categor&iacute;a</span>
-						<br>
-						<a href="#"><span>{{$p->tip}}</span></a>
 					</div> <!-- price-wrap.// -->
 					
 				</figcaption>
