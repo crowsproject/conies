@@ -416,7 +416,7 @@ $(document).ready(function() {
 	@foreach($jardin as $j)
 		<div class="col-md-2">
 			<figure class="card card-product">
-				<div class="img-wrap"> <img src="images/items/item-sm.png"></div>
+				<div class="img-wrap"> <img src="{{asset('/archivos/'.$p->imagen)}}"></div>
 				<figcaption class="info-wrap">
 					<h6 class="title ">{{$j->nombre_herramienta}}</h6>
 					
@@ -454,7 +454,7 @@ $(document).ready(function() {
 	@foreach($hogar as $h)
 		<div class="col-md-2">
 			<figure class="card card-product">
-				<div class="img-wrap"> <img src="images/items/item-sm.png"></div>
+				<div class="img-wrap"> <img src="{{asset('/archivos/'.$p->imagen)}}"></div>
 				<figcaption class="info-wrap">
 					<h6 class="title ">{{$h->nombre_herramienta}}</h6>
 					
@@ -493,7 +493,7 @@ $(document).ready(function() {
 	@foreach($plomeria as $plo)
 		<div class="col-md-2">
 			<figure class="card card-product">
-				<div class="img-wrap"> <img src="images/items/item-sm.png"></div>
+				<div class="img-wrap"> <img src="{{asset('/archivos/'.$p->imagen)}}"></div>
 				<figcaption class="info-wrap">
 					<h6 class="title ">{{$plo->nombre_herramienta}}</h6>
 					
