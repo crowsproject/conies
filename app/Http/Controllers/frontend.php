@@ -16,7 +16,7 @@ class frontend extends Controller
     { 
             /*$produ =\DB::select("SELECT * FROM herramientas ORDER BY id_herramienta ASC");*/
             
-            $produ=\DB::select("SELECT h.id_herramienta,h.nombre_herramienta,h.costo,h.especificaciones,t.id_tipo_herramienta,h.imagen,t.tipo_herramienta AS tip
+            $produ=\DB::select("SELECT h.id_herramienta,h.nombre_herramienta,h.costo,h.especificaciones,h.imagen,t.id_tipo_herramienta,t.tipo_herramienta AS tip
                                     FROM herramientas AS h 
                                     INNER JOIN tipo_herramientas AS t ON t.id_tipo_herramienta =  h.id_tipo_herramienta ORDER BY h.id_herramienta DESC LIMIT 6");
         
